@@ -1,0 +1,95 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper
+{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; /* taki y direction me ham scroll kar sake*/
+}
+
+.container
+{
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;  /* left or right se equal value diya h so that container beech me aa jae*/
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.heading
+{
+    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.cart-box
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* isse utne he space me ek ke baad ek values filled hone ke baad neeche aate jaenge*/ 
+    justify-content: space-between;
+}
+
+.card
+{
+    width: 32%;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img{
+    height: 100%; /* necessary value taki cart ki height along with rounded edges cover ho jae*/
+    width: 100%;
+    object-fit: cover; /* takki purre box ko acche se cover kar le*/
+    box-shadow:  0 0 20px #333;  /* very very light value*/
+    filter: grayscale(100%);
+
+}
+
+.card:hover
+{
+    transform: scale(1.03); /* taki hover karne par image ki size increase kar jae */
+    filter: drop-shadow(0 0 10px #333) ; /* for proper shadow*/
+    transition: 0.3s;
+}
+.card:hover img{
+    filter: grayscale(0); /* here it will be applied and not above kyki card-img me grayscale 100 dia tha*/
+}
+
+.text
+{
+    position: absolute;
+    bottom: 0; /* taki value at the last right most corner se image ke upar aa jae*/
+    right: 0;
+    padding: 25%;
+    width:100% ;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;/* taki phle na dikhe text*/
+    border-radius: 0 0 10px 10px; /* taki text wale box ka bhi corner above cart jeise rouded ho jae*/
+    background: linear-gradient(0deg,rgba(0,0,0,0.5) 0%,rgba(255,255,255,0) 100%); /* gradient applied from bottom to top*/
+    transition: 0.3s;
+
+
+}
+.text:hover{
+    opacity:1;
+    transform: scale(1.03);
+    
+}
+
